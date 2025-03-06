@@ -10,10 +10,10 @@ function App() {
     <>
       <GlobalStyle />
       <Header />
-      <Main>
+      
         <Hero />
         <Services />
-      </Main>
+
     </>
   );
 }

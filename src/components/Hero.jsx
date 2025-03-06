@@ -13,7 +13,7 @@ const Hero = () => {
           focado em aprender e me desenvolver cada vez mais.
         </Description>
         <Button href="#projects">
-          CV <i className="fa-solid fa-download"></i>
+          Download CV <i className="fa-solid fa-download"></i>
         </Button>
       </Content>
 
@@ -35,11 +35,13 @@ const Hero = () => {
 const HeroContainer = styled.section`
   position: relative;
   text-align: start;
-  height: 85dvh;
-  margin: 4rem 6rem;
+  height: 90dvh;
+  padding: 0 6rem;
 `;
 
 const Content = styled.div`
+  position: absolute;
+  top: 25%;
   max-width: 100%;
   padding-bottom: 1rem;
 `;
@@ -86,7 +88,8 @@ const Button = styled.a`
 
 const SocialsContainer = styled.div`
   position: absolute;
-  top: 20%;
+  top: 35%;
+  padding: 0 6rem;
   right: 0;
   display: flex;
   flex-direction: column;

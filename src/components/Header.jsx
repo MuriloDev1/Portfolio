@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../assets/Logo.png"; 
+import logo from "../assets/Logo.png";
 
 const Header = () => {
   return (
@@ -35,7 +35,7 @@ const HeaderWrapper = styled.header`
 `;
 
 const Logo = styled.img`
-  height: 100px; 
+  height: 120px;
   width: auto;
 `;
 
@@ -67,7 +67,7 @@ const Nav = styled.nav`
   }
 
   @media screen and (max-width: 728px) {
-
+    display: block;
   }
 `;
 
