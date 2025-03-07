@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <HeroContainer>
       <Content>
-        <Greeting>Olá, meu nome é</Greeting>
+        <Greeting>Olá! meu nome é</Greeting>
         <Title>Murilo Antunes.</Title>
         <Subtitle>Construindo experiências digitais.</Subtitle>
 
@@ -12,19 +12,19 @@ const Hero = () => {
           Desenvolvedor Full Stack apaixonado por tecnologia e inovação. Estou
           focado em aprender e me desenvolver cada vez mais.
         </Description>
-        <Button href="#projects">
+        <Button href="#">
           Download CV <i className="fa-solid fa-download"></i>
         </Button>
       </Content>
 
       <SocialsContainer>
-        <SocialLink href="https://github.com/seuusuario" target="_blank">
+        <SocialLink href="https://github.com/MuriloDev1" target="_blank">
           <i className="fa-brands fa-github"></i>
         </SocialLink>
-        <SocialLink href="https://linkedin.com/in/seuusuario" target="_blank">
+        <SocialLink href="https://www.linkedin.com/in/murilo-carvalho-145085319/" target="_blank">
           <i className="fa-brands fa-linkedin"></i>
         </SocialLink>
-        <SocialLink href="https://twitter.com/seuusuario" target="_blank">
+        <SocialLink href="https://wa.me/5515988235261" target="_blank">
           <i className="fa-brands fa-whatsapp"></i>
         </SocialLink>
       </SocialsContainer>
@@ -35,15 +35,29 @@ const Hero = () => {
 const HeroContainer = styled.section`
   position: relative;
   text-align: start;
-  height: 90dvh;
+  height: 100dvh;
   padding: 0 6rem;
+
+  @media (max-width: 768px) {
+    padding: 0 2rem;
+    text-align: start;
+  }
 `;
 
 const Content = styled.div`
   position: absolute;
-  top: 25%;
+  top: 10%;
   max-width: 100%;
   padding-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    position: static;
+    top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+  }
 `;
 
 const Greeting = styled.p`
@@ -55,12 +69,20 @@ const Greeting = styled.p`
 const Title = styled.h1`
   margin: 0.8rem 0;
   font-size: 5rem;
+
+  @media (max-width: 768px) {
+    font-size: 3.5rem;
+  }
 `;
 
 const Subtitle = styled.h2`
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
   color: #a8a8a8f1;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const Description = styled.p`
@@ -68,6 +90,10 @@ const Description = styled.p`
   color: #aaaaaa;
   max-width: 600px;
   margin-bottom: 3rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const Button = styled.a`
@@ -84,16 +110,32 @@ const Button = styled.a`
     background-color: var(--highlight-color);
     color: white;
   }
+
+  @media (max-width: 768px) {
+    padding: 10px 30px;
+  }
 `;
 
 const SocialsContainer = styled.div`
   position: absolute;
-  top: 35%;
+  top: 20%;
   padding: 0 6rem;
   right: 0;
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  @media (max-width: 1024px) {
+    padding: 0;
+  }
+
+  @media (max-width: 768px) {
+    position: static;
+    flex-direction: row;
+    justify-content: start;
+    gap: 20px;
+    margin-top: 2rem;
+  }
 `;
 
 const SocialLink = styled.a`

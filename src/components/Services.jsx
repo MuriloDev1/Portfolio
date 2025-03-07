@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Services = () => {
   return (
     <ServicesContainer>
-      <Title>Serviço prestado aos meus clientes.</Title>
+      <Title>Serviços e Conhecimentos.</Title>
       <ContainerItems>
         <SingleItem>
           <img src="./src/assets/service-icon-1.webp" alt="Icone" />
@@ -15,7 +15,6 @@ const Services = () => {
             <li>Fluxo de Usuário</li>
             <li>Design Mobile-First</li>
             <li>Sistemas de Design</li>
-            <li>Design de Interação</li>
           </ul>
         </SingleItem>
 
@@ -24,24 +23,22 @@ const Services = () => {
           <h2>Desenvolvimento</h2>
 
           <ul>
-            <li>Prototipação e Wireframing</li>
-            <li>Fluxo de Usuário</li>
-            <li>Design Mobile-First</li>
-            <li>Sistemas de Design</li>
-            <li>Design de Interação</li>
+            <li>HTML/CSS</li>
+            <li>JavaScript</li>
+            <li>Animações Web</li>
+            <li>React</li>
           </ul>
         </SingleItem>
 
         <SingleItem>
           <img src="./src/assets/service-icon-3.webp" alt="Icone" />
-          <h2>Development</h2>
+          <h2>Stack</h2>
 
           <ul>
-            <li>Prototipação e Wireframing</li>
-            <li>Fluxo de Usuário</li>
-            <li>Design Mobile-First</li>
-            <li>Sistemas de Design</li>
-            <li>Design de Interação</li>
+            <li>Java/SpringBoot</li>
+            <li>APIs RESTful</li>
+            <li>SQL/NoSQL</li>
+            <li>Scrum</li>
           </ul>
         </SingleItem>
       </ContainerItems>
@@ -51,21 +48,22 @@ const Services = () => {
 
 const ServicesContainer = styled.section`
   text-align: start;
-  height: 100dvh;
+  height: auto;
+  margin-bottom: 1rem;
   padding: 0 6rem;
   background-color: var(--secondary-background);
 `;
 
 const Title = styled.h1`
   text-align: start;
-  padding: 10rem 0;
+  padding: 8rem 0 5rem 0;
   font-size: 3.5vw;
   font-weight: normal;
 `;
 
 const ContainerItems = styled.div`
   display: flex;
-  flex-grow: 1;
+  flex-wrap: wrap;
   justify-content: start;
   align-items: start;
   gap: 2.5rem;
@@ -73,15 +71,38 @@ const ContainerItems = styled.div`
 
 const SingleItem = styled.div`
   background-color: var(--primary-background);
-  padding: 54px;
+  width: 300px; 
+  min-height: 350px; 
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
 
   h2 {
     margin: 2rem 0;
+    font-size: 1.5rem;
   }
 
   li {
+    color: #aaaaaa;
     list-style: none;
     margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    width: 250px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; 
+    text-align: left;
   }
 `;
 
