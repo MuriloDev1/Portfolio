@@ -21,7 +21,10 @@ const Hero = () => {
         <SocialLink href="https://github.com/MuriloDev1" target="_blank">
           <i className="fa-brands fa-github"></i>
         </SocialLink>
-        <SocialLink href="https://www.linkedin.com/in/murilo-carvalho-145085319/" target="_blank">
+        <SocialLink
+          href="https://www.linkedin.com/in/murilo-carvalho-145085319/"
+          target="_blank"
+        >
           <i className="fa-brands fa-linkedin"></i>
         </SocialLink>
         <SocialLink href="https://wa.me/5515988235261" target="_blank">
@@ -35,24 +38,23 @@ const Hero = () => {
 const HeroContainer = styled.section`
   position: relative;
   text-align: start;
-  height: 100dvh;
+  min-height: 90dvh;
   padding: 0 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   @media (max-width: 768px) {
-    padding: 0 2rem;
+    padding: 6rem 6rem;
     text-align: start;
   }
 `;
 
 const Content = styled.div`
-  position: absolute;
-  top: 10%;
   max-width: 100%;
   padding-bottom: 1rem;
 
   @media (max-width: 768px) {
-    position: static;
-    top: auto;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -81,7 +83,7 @@ const Subtitle = styled.h2`
   color: #a8a8a8f1;
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -118,23 +120,19 @@ const Button = styled.a`
 
 const SocialsContainer = styled.div`
   position: absolute;
-  top: 20%;
-  padding: 0 6rem;
-  right: 0;
+  top: 35%;
+  right: 6rem;
   display: flex;
   flex-direction: column;
   gap: 15px;
 
-  @media (max-width: 1024px) {
-    padding: 0;
-  }
-
-  @media (max-width: 768px) {
+  @media (max-width: 1044px) {
     position: static;
     flex-direction: row;
     justify-content: start;
     gap: 20px;
-    margin-top: 2rem;
+    padding: 0;
+    margin: 2rem 0;
   }
 `;
 

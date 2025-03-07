@@ -4,7 +4,8 @@ import styled from "styled-components";
 const Services = () => {
   return (
     <ServicesContainer>
-      <Title>Serviços e Conhecimentos.</Title>
+      <Subtitle>|| Services</Subtitle>
+      <Title>Serviços e Conhecimentos</Title>
       <ContainerItems>
         <SingleItem>
           <img src="./src/assets/service-icon-1.webp" alt="Icone" />
@@ -47,18 +48,36 @@ const Services = () => {
 };
 
 const ServicesContainer = styled.section`
+  position: relative;
   text-align: start;
-  height: auto;
+  min-height: 100vh;
   margin-bottom: 1rem;
-  padding: 0 6rem;
+  padding: 2rem 6rem;
   background-color: var(--secondary-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Title = styled.h1`
   text-align: start;
-  padding: 8rem 0 5rem 0;
-  font-size: 3.5vw;
+  padding: 0 0 5rem;
+  font-size: 5rem;
   font-weight: normal;
+
+  @media (max-width: 1024px) {
+    padding: 6rem 0;
+    font-size: 3.5rem;
+  }
+`;
+
+const Subtitle = styled.h2`
+  position: absolute;
+  top: 0;
+  margin: 8rem 0; 
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #aaaaaa;
 `;
 
 const ContainerItems = styled.div`
@@ -71,18 +90,18 @@ const ContainerItems = styled.div`
 
 const SingleItem = styled.div`
   background-color: var(--primary-background);
-  width: 300px; 
-  min-height: 350px; 
+  width: 300px;
+  min-height: 350px;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  
   transition: transform 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   }
 
   h2 {
@@ -101,7 +120,7 @@ const SingleItem = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%; 
+    width: 100%;
     text-align: left;
   }
 `;
