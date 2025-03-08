@@ -6,16 +6,48 @@ import { Subtitle, Title } from "./Titles";
 const Skills = () => {
   return (
     <PrimaryContainer>
-      <Subtitle>|| Skills</Subtitle>
+      <Subtitle>|| Soft Skills</Subtitle>
       <Title>Minhas Skills</Title>
 
       {/* Inicio Skill Progress */}
       <SkillBox>
         <SingleSkillItem>
-          <Tag>Comunicação</Tag>
-          <SkillPercentage>80%</SkillPercentage>
+          <SkillHeader>
+            <Tag>Comunicação</Tag>
+            <SkillPercentage>80%</SkillPercentage>
+          </SkillHeader>
           <ProgressBar>
             <ProgressValue style={{ width: "90%" }}></ProgressValue>
+          </ProgressBar>
+        </SingleSkillItem>
+
+        <SingleSkillItem>
+          <SkillHeader>
+            <Tag>LIderança</Tag>
+            <SkillPercentage>70%</SkillPercentage>
+          </SkillHeader>
+          <ProgressBar>
+            <ProgressValue style={{ width: "70%" }}></ProgressValue>
+          </ProgressBar>
+        </SingleSkillItem>
+
+        <SingleSkillItem>
+          <SkillHeader>
+            <Tag>Trabalho Em Equipe</Tag>
+            <SkillPercentage>90%</SkillPercentage>
+          </SkillHeader>
+          <ProgressBar>
+            <ProgressValue style={{ width: "90%" }}></ProgressValue>
+          </ProgressBar>
+        </SingleSkillItem>
+
+        <SingleSkillItem>
+          <SkillHeader>
+            <Tag>Flexível</Tag>
+            <SkillPercentage>80%</SkillPercentage>
+          </SkillHeader>
+          <ProgressBar>
+            <ProgressValue style={{ width: "80%" }}></ProgressValue>
           </ProgressBar>
         </SingleSkillItem>
       </SkillBox>
@@ -25,15 +57,15 @@ const Skills = () => {
 
 const SkillBox = styled.div`
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: start;
   align-items: start;
   gap: 1.5rem;
 `;
 
 const SingleSkillItem = styled.div`
   width: 100%;
-  max-width: 350px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +74,20 @@ const SingleSkillItem = styled.div`
   gap: 1rem;
 `;
 
+const SkillHeader = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const Tag = styled.div`
+  font-size: 1rem;
+  font-weight: normal;
+  color: #aaaaaa;
+`;
+
+const SkillPercentage = styled.div`
   font-size: 1rem;
   font-weight: normal;
   color: #aaaaaa;
@@ -58,12 +103,6 @@ const ProgressBar = styled.div`
 const ProgressValue = styled.div`
   height: 100%;
   background-color: #fff;
-`;
-
-const SkillPercentage = styled.div`
-  font-size: 1rem;
-  font-weight: normal;
-  color: #aaaaaa;
 `;
 
 export default Skills;

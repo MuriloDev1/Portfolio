@@ -2,13 +2,16 @@ import React from "react";
 import styled from "styled-components";
 // Imports Components
 import { SecondaryContainer } from "./Container";
-import { Subtitle, Title } from "./Titles";
+import { Subtitle, Title, Wrapper } from "./Titles";
 
 const Services = () => {
   return (
     <SecondaryContainer>
-      <Subtitle>|| Services</Subtitle>
-      <Title>Serviços e Conhecimentos</Title>
+      <Wrapper>
+        <Subtitle>|| Services</Subtitle>
+        <Title>Serviços e Conhecimentos</Title>
+      </Wrapper>
+
       <ContainerItems>
         <SingleItem>
           <img src="./src/assets/service-icon-1.webp" alt="Icone" />
@@ -53,7 +56,7 @@ const Services = () => {
 const ContainerItems = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   align-items: start;
   gap: 2.5rem;
 `;
