@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+// Imports Components
+import { SecondaryContainer } from "./Container";
+import { Subtitle, Title } from "./Titles";
 
 const Services = () => {
   return (
-    <ServicesContainer>
+    <SecondaryContainer>
       <Subtitle>|| Services</Subtitle>
       <Title>Serviços e Conhecimentos</Title>
       <ContainerItems>
@@ -43,42 +46,9 @@ const Services = () => {
           </ul>
         </SingleItem>
       </ContainerItems>
-    </ServicesContainer>
+    </SecondaryContainer>
   );
 };
-
-const ServicesContainer = styled.section`
-  position: relative;
-  text-align: start;
-  min-height: 100vh;
-  margin-bottom: 1rem;
-  padding: 2rem 6rem;
-  background-color: var(--secondary-background);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-const Title = styled.h1`
-  text-align: start;
-  padding: 0 0 5rem;
-  font-size: 5rem;
-  font-weight: normal;
-
-  @media (max-width: 1024px) {
-    padding: 6rem 0;
-    font-size: 3.5rem;
-  }
-`;
-
-const Subtitle = styled.h2`
-  position: absolute;
-  top: 0;
-  margin: 8rem 0; 
-  font-size: 1.5rem;
-  font-weight: normal;
-  color: #aaaaaa;
-`;
 
 const ContainerItems = styled.div`
   display: flex;
@@ -91,9 +61,8 @@ const ContainerItems = styled.div`
 const SingleItem = styled.div`
   background-color: var(--primary-background);
   width: 300px;
-  min-height: 350px;
-  padding: 2rem;
-  border-radius: 10px;
+  min-height: 450px;
+  padding: 3rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease;
