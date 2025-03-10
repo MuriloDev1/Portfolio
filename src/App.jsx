@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Header from "./components/Header";
 import GlobalStyle from "./styles/GlobalStyles";
+import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Skills from "./components/Skills";
@@ -12,7 +12,7 @@ function App() {
     AOS.init({
       duration: 1200,
       easing: "ease",
-      once: true, // Animação acontece apenas uma vez
+      once: true,
     });
   }, []);
 

@@ -24,12 +24,17 @@ const Hero = () => {
           Desenvolvedor Full Stack apaixonado por tecnologia e inovação. Estou
           focado em aprender e me desenvolver cada vez mais.
         </Description>
-        <Button data-aos="zoom-in" href="#">
+        <Button
+          data-aos="fade-up"
+          data-aos-delay="600"
+          href="/Murilo_Antunes_CV.pdf"
+          download="Murilo_Antunes_CV"
+        >
           Download CV <i className="fa-solid fa-download"></i>
         </Button>
       </Content>
 
-      <SocialsContainer data-aos="fade-up" data-aos-delay="600">
+      <SocialsContainer data-aos="fade-up">
         <SocialLink href="https://github.com/MuriloDev1" target="_blank">
           <i className="fa-brands fa-github"></i>
         </SocialLink>
