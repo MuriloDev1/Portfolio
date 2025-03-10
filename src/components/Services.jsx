@@ -56,18 +56,19 @@ const Services = () => {
 const ContainerItems = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   align-items: start;
   gap: 2.5rem;
 `;
 
 const SingleItem = styled.div`
+  cursor: pointer;
   background-color: var(--primary-background);
   width: 300px;
   min-height: 450px;
   padding: 3rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  text-align: left;
   transition: transform 0.3s ease;
 
   &:hover {
@@ -88,12 +89,11 @@ const SingleItem = styled.div`
   }
 
   @media (max-width: 1024px) {
-    width: 250px;
+    width: 400px;
   }
 
   @media (max-width: 768px) {
     width: 100%;
-    text-align: left;
   }
 `;
 

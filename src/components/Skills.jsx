@@ -1,66 +1,100 @@
 import React from "react";
 import styled from "styled-components";
 import { PrimaryContainer } from "./Container";
-import { Subtitle, Title } from "./Titles";
+import { Subtitle, Title, TitleWrapper } from "./Titles";
 
 const Skills = () => {
   return (
     <PrimaryContainer>
-      <Subtitle>|| Soft Skills</Subtitle>
-      <Title>Minhas Skills</Title>
+      <ContentWrapper>
+        <SkillsContent>
+          <TitleWrapper>
+            <Subtitle>|| Soft Skills</Subtitle>
+            <Title>Minhas Skills</Title>
+          </TitleWrapper>
+        </SkillsContent>
 
-      {/* Inicio Skill Progress */}
-      <SkillBox>
-        <SingleSkillItem>
-          <SkillHeader>
-            <Tag>Comunicação</Tag>
-            <SkillPercentage>80%</SkillPercentage>
-          </SkillHeader>
-          <ProgressBar>
-            <ProgressValue style={{ width: "90%" }}></ProgressValue>
-          </ProgressBar>
-        </SingleSkillItem>
+        <SkillBox>
+          <SingleSkillItem>
+            <SkillHeader>
+              <Tag>Comunicação</Tag>
+              <SkillPercentage>80%</SkillPercentage>
+            </SkillHeader>
+            <ProgressBar>
+              <ProgressValue style={{ width: "80%" }}></ProgressValue>
+            </ProgressBar>
+          </SingleSkillItem>
 
-        <SingleSkillItem>
-          <SkillHeader>
-            <Tag>LIderança</Tag>
-            <SkillPercentage>70%</SkillPercentage>
-          </SkillHeader>
-          <ProgressBar>
-            <ProgressValue style={{ width: "70%" }}></ProgressValue>
-          </ProgressBar>
-        </SingleSkillItem>
+          <SingleSkillItem>
+            <SkillHeader>
+              <Tag>Liderança</Tag>
+              <SkillPercentage>70%</SkillPercentage>
+            </SkillHeader>
+            <ProgressBar>
+              <ProgressValue style={{ width: "70%" }}></ProgressValue>
+            </ProgressBar>
+          </SingleSkillItem>
 
-        <SingleSkillItem>
-          <SkillHeader>
-            <Tag>Trabalho Em Equipe</Tag>
-            <SkillPercentage>90%</SkillPercentage>
-          </SkillHeader>
-          <ProgressBar>
-            <ProgressValue style={{ width: "90%" }}></ProgressValue>
-          </ProgressBar>
-        </SingleSkillItem>
+          <SingleSkillItem>
+            <SkillHeader>
+              <Tag>Trabalho Em Equipe</Tag>
+              <SkillPercentage>90%</SkillPercentage>
+            </SkillHeader>
+            <ProgressBar>
+              <ProgressValue style={{ width: "90%" }}></ProgressValue>
+            </ProgressBar>
+          </SingleSkillItem>
 
-        <SingleSkillItem>
-          <SkillHeader>
-            <Tag>Flexível</Tag>
-            <SkillPercentage>80%</SkillPercentage>
-          </SkillHeader>
-          <ProgressBar>
-            <ProgressValue style={{ width: "80%" }}></ProgressValue>
-          </ProgressBar>
-        </SingleSkillItem>
-      </SkillBox>
+          <SingleSkillItem>
+            <SkillHeader>
+              <Tag>Flexível</Tag>
+              <SkillPercentage>80%</SkillPercentage>
+            </SkillHeader>
+            <ProgressBar>
+              <ProgressValue style={{ width: "80%" }}></ProgressValue>
+            </ProgressBar>
+          </SingleSkillItem>
+        </SkillBox>
+      </ContentWrapper>
     </PrimaryContainer>
   );
 };
 
+const ContentWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+`;
+
+const SkillsContent = styled.div`
+  flex: 1;
+  max-width: 40%;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+`;
+
 const SkillBox = styled.div`
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: start;
   gap: 1.5rem;
+  flex: 1;
+  margin-left: 3rem;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 const SingleSkillItem = styled.div`
@@ -70,7 +104,7 @@ const SingleSkillItem = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: var(--secondary-background);
-  padding: 4rem;
+  padding: 2rem;
   gap: 1rem;
 `;
 

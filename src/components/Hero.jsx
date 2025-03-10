@@ -1,23 +1,35 @@
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Hero = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease",
+      once: true,
+    });
+  }, []);
+
   return (
     <HeroContainer>
       <Content>
-        <Greeting>Olá! meu nome é</Greeting>
-        <Title>Murilo Antunes.</Title>
-        <Subtitle>Construindo experiências digitais.</Subtitle>
-
-        <Description>
+        <Greeting data-aos="fade-left">Olá! meu nome é</Greeting>
+        <Title data-aos="fade-up">Murilo Antunes.</Title>
+        <Subtitle data-aos="fade-up" data-aos-delay="200">
+          Construindo experiências digitais.
+        </Subtitle>
+        <Description data-aos="fade-up" data-aos-delay="400">
           Desenvolvedor Full Stack apaixonado por tecnologia e inovação. Estou
           focado em aprender e me desenvolver cada vez mais.
         </Description>
-        <Button href="#">
+        <Button data-aos="zoom-in" href="#">
           Download CV <i className="fa-solid fa-download"></i>
         </Button>
       </Content>
 
-      <SocialsContainer>
+      <SocialsContainer data-aos="fade-up" data-aos-delay="600">
         <SocialLink href="https://github.com/MuriloDev1" target="_blank">
           <i className="fa-brands fa-github"></i>
         </SocialLink>
