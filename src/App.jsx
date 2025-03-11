@@ -6,6 +6,8 @@ import Services from "./components/Services";
 import Skills from "./components/Skills";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import About from "./pages/About";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   useEffect(() => {
@@ -17,13 +19,23 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Router>
       <GlobalStyle />
       <Header />
-      <Hero />
-      <Services />
-      <Skills />
-    </>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <Services />
+              <Skills />
+            </>
+          }
+        />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 

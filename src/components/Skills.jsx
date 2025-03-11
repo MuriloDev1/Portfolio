@@ -3,6 +3,13 @@ import styled from "styled-components";
 import { PrimaryContainer } from "./Container";
 import { Subtitle, Title, TitleWrapper } from "./Titles";
 
+const skillsData = [
+  { name: "Comunicação", percentage: 80 },
+  { name: "Liderança", percentage: 70 },
+  { name: "Trabalho em Equipe", percentage: 90 },
+  { name: "Flexível", percentage: 80 },
+];
+
 const Skills = () => {
   return (
     <PrimaryContainer>
@@ -15,45 +22,17 @@ const Skills = () => {
         </SkillsContent>
 
         <SkillBox>
-          <SingleSkillItem>
-            <SkillHeader>
-              <Tag>Comunicação</Tag>
-              <SkillPercentage>80%</SkillPercentage>
-            </SkillHeader>
-            <ProgressBar>
-              <ProgressValue style={{ width: "80%" }}></ProgressValue>
-            </ProgressBar>
-          </SingleSkillItem>
-
-          <SingleSkillItem>
-            <SkillHeader>
-              <Tag>Liderança</Tag>
-              <SkillPercentage>70%</SkillPercentage>
-            </SkillHeader>
-            <ProgressBar>
-              <ProgressValue style={{ width: "70%" }}></ProgressValue>
-            </ProgressBar>
-          </SingleSkillItem>
-
-          <SingleSkillItem>
-            <SkillHeader>
-              <Tag>Trabalho Em Equipe</Tag>
-              <SkillPercentage>90%</SkillPercentage>
-            </SkillHeader>
-            <ProgressBar>
-              <ProgressValue style={{ width: "90%" }}></ProgressValue>
-            </ProgressBar>
-          </SingleSkillItem>
-
-          <SingleSkillItem>
-            <SkillHeader>
-              <Tag>Flexível</Tag>
-              <SkillPercentage>80%</SkillPercentage>
-            </SkillHeader>
-            <ProgressBar>
-              <ProgressValue style={{ width: "80%" }}></ProgressValue>
-            </ProgressBar>
-          </SingleSkillItem>
+          {skillsData.map((skill, index) => (
+            <SingleSkillItem key={index}>
+              <SkillHeader>
+                <Tag>{skill.name}</Tag>
+                <SkillPercentage>{skill.percentage}%</SkillPercentage>
+              </SkillHeader>
+              <ProgressBar>
+                <ProgressValue style={{ width: `${skill.percentage}%` }} />
+              </ProgressBar>
+            </SingleSkillItem>
+          ))}
         </SkillBox>
       </ContentWrapper>
     </PrimaryContainer>

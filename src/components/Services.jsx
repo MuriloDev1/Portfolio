@@ -4,6 +4,29 @@ import styled from "styled-components";
 import { SecondaryContainer } from "./Container";
 import { Subtitle, Title, Wrapper } from "./Titles";
 
+const servicesData = [
+  {
+    imgSrc: "./src/assets/service-icon-1.webp",
+    title: "UI/UX Design",
+    items: [
+      "Prototipação e Wireframing",
+      "Fluxo de Usuário",
+      "Design Mobile-First",
+      "Sistemas de Design",
+    ],
+  },
+  {
+    imgSrc: "./src/assets/service-icon-2.webp",
+    title: "FrontEnd",
+    items: ["HTML/CSS", "JavaScript", "Animações Web", "React"],
+  },
+  {
+    imgSrc: "./src/assets/service-icon-3.webp",
+    title: "BackEnd",
+    items: ["Java/SpringBoot", "APIs RESTful", "SQL/NoSQL", "Scrum"],
+  },
+];
+
 const Services = () => {
   return (
     <SecondaryContainer>
@@ -13,41 +36,17 @@ const Services = () => {
       </Wrapper>
 
       <ContainerItems>
-        <SingleItem>
-          <img src="./src/assets/service-icon-1.webp" alt="Icone" />
-          <h2>UI/UX Design</h2>
-
-          <ul>
-            <li>Prototipação e Wireframing</li>
-            <li>Fluxo de Usuário</li>
-            <li>Design Mobile-First</li>
-            <li>Sistemas de Design</li>
-          </ul>
-        </SingleItem>
-
-        <SingleItem>
-          <img src="./src/assets/service-icon-2.webp" alt="Icone" />
-          <h2>Desenvolvimento</h2>
-
-          <ul>
-            <li>HTML/CSS</li>
-            <li>JavaScript</li>
-            <li>Animações Web</li>
-            <li>React</li>
-          </ul>
-        </SingleItem>
-
-        <SingleItem>
-          <img src="./src/assets/service-icon-3.webp" alt="Icone" />
-          <h2>Stack</h2>
-
-          <ul>
-            <li>Java/SpringBoot</li>
-            <li>APIs RESTful</li>
-            <li>SQL/NoSQL</li>
-            <li>Scrum</li>
-          </ul>
-        </SingleItem>
+        {servicesData.map((service, index) => (
+          <SingleItem key={index}>
+            <img src={service.imgSrc} alt="Ícone" />
+            <h2>{service.title}</h2>
+            <ul>
+              {service.items.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          </SingleItem>
+        ))}
       </ContainerItems>
     </SecondaryContainer>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../assets/Logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,16 +10,18 @@ const Header = () => {
       <Nav>
         <ul>
           <li>
-            <a href="#home">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#about">Sobre</a>
+            <Link to="/about">Sobre</Link>
           </li>
           <li>
-            <a href="#projects">Projetos</a>
+            <Link to="/">Projetos</Link>
           </li>
           <li>
-            <ContactButton href="#contact">Contato</ContactButton>
+            <ContactButton as={Link} to="#Contact">
+              Contato
+            </ContactButton>
           </li>
         </ul>
       </Nav>
@@ -27,6 +30,9 @@ const Header = () => {
 };
 
 const HeaderWrapper = styled.header`
+  position: sticky;
+  top: 0;
+  z-index: 99999;
   background-color: var(--header);
   padding: 0rem 4rem;
   display: flex;
