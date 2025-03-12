@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Content, Greeting, Title, Subtitle, Description } from "./PageTitle";
 
 const Hero = () => {
   useEffect(() => {
@@ -64,54 +65,6 @@ const HeroContainer = styled.section`
   @media (max-width: 768px) {
     padding: 6rem 6rem;
     text-align: start;
-  }
-`;
-
-const Content = styled.div`
-  max-width: 100%;
-  padding-bottom: 1rem;
-
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    text-align: start;
-  }
-`;
-
-const Greeting = styled.p`
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: var(--highlight-color);
-`;
-
-const Title = styled.h1`
-  margin: 0.8rem 0;
-  font-size: 5rem;
-
-  @media (max-width: 768px) {
-    font-size: 3.5rem;
-  }
-`;
-
-const Subtitle = styled.h2`
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  color: #a8a8a8f1;
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-  }
-`;
-
-const Description = styled.p`
-  font-size: 1.2rem;
-  color: #aaaaaa;
-  max-width: 600px;
-  margin-bottom: 3rem;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
   }
 `;
 

@@ -1,22 +1,29 @@
 import React from "react";
-import Layout from "../components/Layout";
-import styled from "styled-components";
-
-const AboutWrapper = styled.section`
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-`;
+import Layout from "../components/PageLayout";
+import { Link } from "react-router-dom";
+import { Content,  } from "../components/PageTitle";
 
 const About = () => {
   return (
-    <Layout>
-      <AboutWrapper>
-        <h1>Sobre Mim</h1>
-        <p>Esta é a página Sobre, onde falo mais sobre mim e meu trabalho.</p>
-      </AboutWrapper>
+    <Layout
+      hero={
+        <div>
+          <h2>Sobre Mim</h2>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>Sobre</li>
+          </ul>
+        </div>
+      }
+    >
+      <Content>
+        <img src="/" alt="Foto Pessoal" />
+      </Content>
     </Layout>
   );
 };
+
 
 export default About;

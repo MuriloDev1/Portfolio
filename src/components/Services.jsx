@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 // Imports Components
 import { SecondaryContainer } from "./Container";
-import { Subtitle, Title, Wrapper } from "./Titles";
+import { Subtitle, Title, Wrapper } from "./SectionTitle";
 
 const servicesData = [
   {

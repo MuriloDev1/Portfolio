@@ -32,3 +32,4 @@ export const TitleWrapper = styled.div`
   flex-direction: column;
   text-align: start;
 `;
+

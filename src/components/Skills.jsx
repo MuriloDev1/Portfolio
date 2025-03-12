@@ -1,7 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
 import { PrimaryContainer } from "./Container";
-import { Subtitle, Title, TitleWrapper } from "./Titles";
+import { Subtitle, Title, TitleWrapper } from "./SectionTitle";
 
 const skillsData = [
   { name: "Comunicação", percentage: 80 },

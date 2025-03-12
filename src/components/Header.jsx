@@ -38,11 +38,12 @@ const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
 const Logo = styled.img`
   padding: 0 1.5rem;
-  height: 120px;
+  height: 90px;
   width: auto;
 `;
 
