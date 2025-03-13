@@ -45,6 +45,7 @@ const HeroContent = styled.section`
   }
 
   li a:hover {
+    transition: all 0.2s ease-in;
     color: #fff;
   }
 
@@ -62,7 +63,7 @@ const HeroContent = styled.section`
 
 const MainContent = styled.main`
   flex: 1;
-  padding: 20px;
+  padding: 0px;
   background-color: var(--secondary-background);
 `;
 
