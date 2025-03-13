@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Layout from "../components/PageLayout";
 import { Link } from "react-router-dom";
 
 const About = () => {
+  const [selectedCategory, setSelectedCategory] = useState("Educacao")
+  const [filteredTimeline, setFilteredTimeline] = useState(timelineData.filter(item => item.category === "Educacao"));
+
+  
   return (
     <Layout
       hero={
@@ -38,17 +42,31 @@ const About = () => {
 
       <Journey>
         <ul>
-          <li>Educação</li>
-          <li>Experiência</li>
+          <li onClick={() => setSelectedCategory("Educacao")} className={selectedCategory === "Educacao" ? "active" : "" }>Educação</li>
+          <li onClick={() => setSelectedCategory("Experiencia")} className={selectedCategory === "Experiencia" ? "active" : "" }>Experiência</li>
         </ul>
-        <TimeLine>
-          <span>2023</span>
-        </TimeLine>
+
+        <Timeline>
+        {filteredTimeline.map((item, index) => (
+          <TimelineItem key={index}>
+            <TimelineContent>
+              <h2>{item.title}</h2>
+              <h3>{item.year}</h3>
+              <p>{item.description}</p>
+              {item.details.map((detail, i) => (
+                <p key={i}>{detail}</p>
+              ))}
+            </TimelineContent>
+          </TimelineItem>
+        ))}
+      </Timeline>
+
       </Journey>
     </Layout>
   );
 };
 
+//  Sobre Mim
 const ContentAbout = styled.div`
   display: flex;
   justify-content: center;
@@ -101,6 +119,7 @@ const ContentAbout = styled.div`
   }
 `;
 
+// Minha Jornada
 const Journey = styled.div`
   background-color: var(--primary-background);
   min-height: 100dvh;
@@ -113,7 +132,9 @@ const Journey = styled.div`
   }
 
   li {
-    width: 35%;
+    cursor: pointer;
+    width: 20%;
+    min-width: 400px;
     text-align: center;
     font-size: 1.8rem;
     padding: 1rem 0;
@@ -123,33 +144,116 @@ const Journey = styled.div`
   }
 `;
 
-const TimeLine = styled.div`
+const timelineData = [
+  {
+    title: "Graduação",
+    year: "2025",
+    description: "Estudando na faculdade Senai em parceria com a Toyota - Análise e Desenvolvimento de Sistemas.",
+    details: [
+      "Participação direta de um projeto de grande escala para a Instituição Toyota Brasil.",
+      "Desenvolvimento de projetos pessoais.",
+      "Aprendizado contínuo em tecnologias web e backend."
+    ],
+    category: "Educacao"
+  },
+  {
+    title: "Técnico Integrado",
+    year: "2023-2024",
+    description: "Início dos estudos em programção e desenvolvimento web",
+    details: [
+      "Curso Técnico em ADS - Senai",
+    ],
+    category: "Educacao"
+  },
+  {
+    title: "Ensino Médio",
+    year: "2022-2024",
+    description: "Ensino Médio - Rede Sesi",
+    details: [
+      "Integrante Equipe de Robótica - Sesi",
+    ],
+    category: "Educacao"
+  },
+  {
+    title: "Estágio - Apoio de Informática",
+    year: "2025",
+    description: "Atendimento a alunos e professores na escola Objetivo Centro Sorocaba.",
+    details: [
+      "Redefinição de senhas e suporte ao sistema Geekie via Google.",
+      "Configuração e manutenção de redes e dispositivos.",
+      "Resolução de problemas no Wi-Fi e ajustes no PowerPoint."
+    ],
+    category: "Experiencia"
+  },
+]
+
+const Timeline = styled.div`
   position: relative;
-  left: 20%;
-  margin: 6rem 0;
-  float: left;
-  min-height: 200px;
-  border-right: 1px solid;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 800px;
+  margin: 6rem auto;
 
-  span {
-    margin-right: 2rem;
-    padding: 2px 15px;
-    background-color: var(--secondary-background);
-    position: relative;
-    clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 50%, 100% 100%, 0 100%);
-  }
-
-  &::after {
+  &::before {
     content: "";
     position: absolute;
-    width: 15px;
-    height: 15px;
-    background-color: var(--highlight-color);
-    box-shadow: 0 0 12px var(--highlight-color),
-      0 0 20px rgba(130, 195, 191, 0.7);
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #aaa;
+    transform: translateX(-50%);
+  }
+`;
+
+const TimelineItem = styled.div`
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+
+  &:nth-child(odd) {
+    text-align: right;
+    left: 0;
+  }
+
+  &:nth-child(even) {
+    text-align: left;
+    left: 50%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background: var(--highlight-color);
     border-radius: 50%;
-    right: -8px;
-    top: -25px;
+    box-shadow: 0 0 12px var(--highlight-color);
+  }
+
+  &:nth-child(even)::before {
+    left: -10px;
+  }
+`;
+
+const TimelineContent = styled.div`
+  background: var(--secondary-background);
+  padding: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: start;
+
+  h3 {
+    font-weight: normal;
+    font-style: italic;
+    margin: 0.5rem 0 1.2rem;
+  }
+
+  p {
+    color: #aaaaaa;
+    line-height: 1.5rem;
+    margin-bottom: 1.3rem;
   }
 `;
 
