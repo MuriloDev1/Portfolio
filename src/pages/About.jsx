@@ -1,13 +1,73 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Layout from "../components/PageLayout";
 import { Link } from "react-router-dom";
 
-const About = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Educacao")
-  const [filteredTimeline, setFilteredTimeline] = useState(timelineData.filter(item => item.category === "Educacao"));
+const timelineData = [
+  {
+    title: "Graduação",
+    year: "2025",
+    description:
+      "Estudando na faculdade Senai em parceria com a Toyota - Análise e Desenvolvimento de Sistemas.",
+    details: [
+      "Participação direta de um projeto de grande escala para a Instituição Toyota Brasil.",
+      "Desenvolvimento de projetos pessoais.",
+      "Aprendizado contínuo em tecnologias web e backend.",
+    ],
+    category: "Educacao",
+  },
+  {
+    title: "Técnico Integrado",
+    year: "2023-2024",
+    description: "Início dos estudos em programção e desenvolvimento web",
+    details: ["Curso Técnico em ADS - Senai"],
+    category: "Educacao",
+  },
+  {
+    title: "Ensino Médio",
+    year: "2022-2024",
+    description: "Ensino Médio - Rede Sesi",
+    details: ["Integrante Equipe de Robótica - Sesi"],
+    category: "Educacao",
+  },
+  {
+    title: "Estágio - Apoio de Informática",
+    year: "2025",
+    description:
+      "Atendimento a alunos e professores na escola Objetivo Centro Sorocaba.",
+    details: [
+      "Redefinição de senhas e suporte ao sistema Geekie via Google.",
+      "Configuração e manutenção de redes e dispositivos.",
+      "Resolução de problemas no Wi-Fi e ajustes no PowerPoint.",
+    ],
+    category: "Experiencia",
+  },
+  {
+    title: "Monitor de Festas Infantis",
+    year: "2023",
+    description:
+      "Atuação como Monitor de Festas Infantis",
+    details: [
+      "Organização e condução de brincadeiras e atividades recreativas, estimulando a interação entre as crianças.",
+      "Desenvolvimento de habilidades de comunicação e trabalho em equipe para coordenar eventos de forma eficiente.",
+      "Gerenciamento de imprevistos e atendimento aos pais e responsáveis, garantindo um ambiente seguro e agradável.",
+      "Aprimoramento da paciência, liderança e capacidade de resolver problemas em situações dinâmicas.",
+    ],
+    category: "Experiencia",
+  },
+];
 
-  
+const About = () => {
+  const [selectedCategory, setSelectedCategory] = useState("Educacao");
+  const [filteredTimeline, setFilteredTimeline] = useState([]);
+
+  // Atualiza o estado sempre que a categoria mudar
+  useEffect(() => {
+    setFilteredTimeline(
+      timelineData.filter((item) => item.category === selectedCategory)
+    );
+  }, [selectedCategory]);
+
   return (
     <Layout
       hero={
@@ -42,25 +102,34 @@ const About = () => {
 
       <Journey>
         <ul>
-          <li onClick={() => setSelectedCategory("Educacao")} className={selectedCategory === "Educacao" ? "active" : "" }>Educação</li>
-          <li onClick={() => setSelectedCategory("Experiencia")} className={selectedCategory === "Experiencia" ? "active" : "" }>Experiência</li>
+          <li
+            onClick={() => setSelectedCategory("Educacao")}
+            className={selectedCategory === "Educacao" ? "active" : ""}
+          >
+            Educação
+          </li>
+          <li
+            onClick={() => setSelectedCategory("Experiencia")}
+            className={selectedCategory === "Experiencia" ? "active" : ""}
+          >
+            Experiência
+          </li>
         </ul>
 
         <Timeline>
-        {filteredTimeline.map((item, index) => (
-          <TimelineItem key={index}>
-            <TimelineContent>
-              <h2>{item.title}</h2>
-              <h3>{item.year}</h3>
-              <p>{item.description}</p>
-              {item.details.map((detail, i) => (
-                <p key={i}>{detail}</p>
-              ))}
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
-
+          {filteredTimeline.map((item, index) => (
+            <TimelineItem key={index}>
+              <TimelineContent>
+                <h2>{item.title}</h2>
+                <h3>{item.year}</h3>
+                <p>{item.description}</p>
+                {item.details.map((detail, i) => (
+                  <p key={i}>{detail}</p>
+                ))}
+              </TimelineContent>
+            </TimelineItem>
+          ))}
+        </Timeline>
       </Journey>
     </Layout>
   );
@@ -144,49 +213,6 @@ const Journey = styled.div`
   }
 `;
 
-const timelineData = [
-  {
-    title: "Graduação",
-    year: "2025",
-    description: "Estudando na faculdade Senai em parceria com a Toyota - Análise e Desenvolvimento de Sistemas.",
-    details: [
-      "Participação direta de um projeto de grande escala para a Instituição Toyota Brasil.",
-      "Desenvolvimento de projetos pessoais.",
-      "Aprendizado contínuo em tecnologias web e backend."
-    ],
-    category: "Educacao"
-  },
-  {
-    title: "Técnico Integrado",
-    year: "2023-2024",
-    description: "Início dos estudos em programção e desenvolvimento web",
-    details: [
-      "Curso Técnico em ADS - Senai",
-    ],
-    category: "Educacao"
-  },
-  {
-    title: "Ensino Médio",
-    year: "2022-2024",
-    description: "Ensino Médio - Rede Sesi",
-    details: [
-      "Integrante Equipe de Robótica - Sesi",
-    ],
-    category: "Educacao"
-  },
-  {
-    title: "Estágio - Apoio de Informática",
-    year: "2025",
-    description: "Atendimento a alunos e professores na escola Objetivo Centro Sorocaba.",
-    details: [
-      "Redefinição de senhas e suporte ao sistema Geekie via Google.",
-      "Configuração e manutenção de redes e dispositivos.",
-      "Resolução de problemas no Wi-Fi e ajustes no PowerPoint."
-    ],
-    category: "Experiencia"
-  },
-]
-
 const Timeline = styled.div`
   position: relative;
   padding: 2rem 0;
@@ -212,7 +238,6 @@ const TimelineItem = styled.div`
   box-sizing: border-box;
 
   &:nth-child(odd) {
-    text-align: right;
     left: 0;
   }
 

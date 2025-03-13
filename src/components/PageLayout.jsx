@@ -34,7 +34,7 @@ const HeroContent = styled.section`
     justify-content: space-evenly;
     margin: 0 auto;
     max-width: 200px;
-    padding: 1.2rem;
+    padding: 1.4rem;
     border-radius: 5rem;
     background-color: var(--secondary-background);
   }
@@ -53,11 +53,10 @@ const HeroContent = styled.section`
     color: #fff;
   }
 
-  li:nth-child(1):after {
-    position: absolute;
-    left: 50%;
-    translate: -50%;
+  li:not(:last-child)::after {
     content: "||";
+    margin: 0 1rem;
+    color: #aaaaaa;
   }
 `;
 

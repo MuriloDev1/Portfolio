@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import About from "./pages/About";
+import Projects from "./pages/Projects";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           }
         />
         <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
       </Routes>
     </Router>
   );
