@@ -45,8 +45,7 @@ const timelineData = [
   {
     title: "Monitor de Festas Infantis",
     year: "2023",
-    description:
-      "Atuação como Monitor de Festas Infantis",
+    description: "Atuação como Monitor de Festas Infantis",
     details: [
       "Organização e condução de brincadeiras e atividades recreativas, estimulando a interação entre as crianças.",
       "Desenvolvimento de habilidades de comunicação e trabalho em equipe para coordenar eventos de forma eficiente.",
@@ -178,6 +177,9 @@ const ContentAbout = styled.div`
   }
 
   @media screen and (max-width: 1024px) {
+    img {
+      width: 80%;
+    }
     section {
       width: 100%;
       text-align: center;
@@ -203,13 +205,17 @@ const Journey = styled.div`
   li {
     cursor: pointer;
     width: 20%;
-    min-width: 400px;
+    min-width: 300px;
     text-align: center;
     font-size: 1.8rem;
     padding: 1rem 0;
     border: 1px solid #aaaaaa27;
     background-color: var(--secondary-background);
     list-style: none;
+
+    @media screen and (max-width: 740px) {
+      min-width: 200px;
+    }
   }
 `;
 
@@ -233,12 +239,12 @@ const Timeline = styled.div`
 
 const TimelineItem = styled.div`
   position: relative;
-  width: 50%;
+  width: 60%;
   padding: 1rem 2rem;
   box-sizing: border-box;
 
   &:nth-child(odd) {
-    left: 0;
+    left: -10%;
   }
 
   &:nth-child(even) {
@@ -249,7 +255,7 @@ const TimelineItem = styled.div`
   &::before {
     content: "";
     position: absolute;
-    top: 20px;
+    top: 0;
     right: -10px;
     width: 20px;
     height: 20px;

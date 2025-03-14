@@ -8,7 +8,17 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 function App() {
   useEffect(() => {
@@ -21,6 +31,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <GlobalStyle />
       <Header />
       <Routes>

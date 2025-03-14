@@ -27,7 +27,6 @@ const Hero = () => {
         </Description>
         <Button
           data-aos="fade-up"
-          data-aos-delay="600"
           href="/Murilo_Antunes_CV.pdf"
           download="Murilo_Antunes_CV"
         >
