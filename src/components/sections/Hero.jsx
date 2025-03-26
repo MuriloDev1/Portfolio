@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Content, Greeting, Title, Subtitle, Description } from "./PageTitle";
+import { Content, Greeting, Title, Subtitle, Description } from "../layout/PageTitle";
 
 const Hero = () => {
   useEffect(() => {
