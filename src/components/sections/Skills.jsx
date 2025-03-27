@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { PrimaryContainer } from "../layout/Container";
+import { Container } from "../layout/Container";
 import { Subtitle, Title, TitleWrapper } from "./SectionTitle";
 
 const skillsData = [
@@ -13,7 +13,7 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <PrimaryContainer>
+    <Container>
       <ContentWrapper>
         <SkillsContent>
           <TitleWrapper>
@@ -36,7 +36,7 @@ const Skills = () => {
           ))}
         </SkillBox>
       </ContentWrapper>
-    </PrimaryContainer>
+    </Container>
   );
 };
 
