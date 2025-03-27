@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ContainerBase = styled.section`
+export const Container = styled.section`
   position: relative;
   text-align: start;
   min-height: 100vh;
@@ -9,14 +9,7 @@ const ContainerBase = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: ${({ bgColor }) => bgColor || "var(--primary-background)"};
 `;
 
-const PrimaryContainer = styled(ContainerBase)`
-  background-color: var(--primary-background);
-`;
-
-const SecondaryContainer = styled(ContainerBase)`
-  background-color: var(--secondary-background);
-`;
-
-export { PrimaryContainer, SecondaryContainer };
+export default Container;

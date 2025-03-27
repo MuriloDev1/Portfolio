@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Layout from "../components/PageLayout";
+import Layout from "../components/layout/PageLayout";
 import { Link } from "react-router-dom";
 
 const timelineData = [

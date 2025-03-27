@@ -1,5 +1,4 @@
 import React from "react";
-import { Subtitle } from "./Titles";
 
 const projectsData = [
   {

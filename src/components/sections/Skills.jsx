@@ -1,7 +1,7 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-import { PrimaryContainer } from "./Container";
+import { PrimaryContainer } from "../layout/Container";
 import { Subtitle, Title, TitleWrapper } from "./SectionTitle";
 
 const skillsData = [

@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/PageLayout";
+import Layout from "../components/layout/PageLayout";
 import { Link } from "react-router-dom";
 
 const Projects = () => {

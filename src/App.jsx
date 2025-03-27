@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import GlobalStyle from "./styles/GlobalStyles";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import Skills from "./components/Skills";
+import Header from "./components/header/Header";
+import Hero from "./components/sections/Hero";
+import Services from "./components/sections/Services";
+import Skills from "./components/sections/Skills";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import About from "./pages/About";
