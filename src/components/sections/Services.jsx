@@ -29,7 +29,7 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <SecondaryContainer>
+    <Container secondary>
       <Wrapper>
         <Subtitle>|| Services</Subtitle>
         <Title>Serviços e Conhecimentos</Title>
@@ -48,7 +48,7 @@ const Services = () => {
           </SingleItem>
         ))}
       </ContainerItems>
-    </SecondaryContainer>
+    </Container >
   );
 };
 
