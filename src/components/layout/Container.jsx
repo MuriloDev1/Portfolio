@@ -9,7 +9,8 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: ${({ bgColor }) => bgColor || "var(--primary-background)"};
+  background-color: ${({ secondary }) =>
+    secondary ? "var(--secondary-background)" : "var(--primary-background)"};
 `;
 
 export default Container;
