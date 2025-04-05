@@ -15,18 +15,17 @@ const Hero = () => {
 
   return (
     <HeroContainer>
-      <Content>
-        <Greeting data-aos="fade-left">Olá! meu nome é</Greeting>
-        <Title data-aos="fade-up">Murilo Antunes.</Title>
-        <Subtitle data-aos="fade-up" data-aos-delay="200">
+      <Content data-aos="fade-up" data-aos-delay="500">
+        <Greeting>Olá! meu nome é</Greeting>
+        <Title>Murilo Antunes.</Title>
+        <Subtitle>
           Construindo experiências digitais.
         </Subtitle>
-        <Description data-aos="fade-up" data-aos-delay="400">
+        <Description>
           Desenvolvedor Full Stack apaixonado por tecnologia e inovação. Estou
           focado em aprender e me desenvolver cada vez mais.
         </Description>
         <Button
-          data-aos="fade-up"
           href="/Murilo_Antunes_CV.pdf"
           download="Murilo_Antunes_CV"
         >
@@ -34,7 +33,7 @@ const Hero = () => {
         </Button>
       </Content>
 
-      <SocialsContainer data-aos="fade-up">
+      <SocialsContainer data-aos="fade-up" data-aos-delay="500">
         <SocialLink href="https://github.com/MuriloDev1" target="_blank">
           <i className="fa-brands fa-github"></i>
         </SocialLink>

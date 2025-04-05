@@ -74,8 +74,12 @@ const Nav = styled.nav`
     color: #ccccccf3;
   }
 
-  @media screen and (max-width: 728px) {
-    display: block;
+  @media screen and (max-width: 900px) {
+    ul {
+      display: block;
+      justify-content: center;
+      align-items: center;
+    }
   }
 `;
 

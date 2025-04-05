@@ -196,6 +196,10 @@ const Journey = styled.div`
   min-height: 100dvh;
   padding: 3rem 6rem;
 
+  @media screen and (max-width: 680px) {
+    padding: 3rem 3rem;  // <-- Reduz o padding para telas menores
+  }
+
   ul {
     display: flex;
     justify-content: center;
@@ -205,7 +209,7 @@ const Journey = styled.div`
   li {
     cursor: pointer;
     width: 20%;
-    min-width: 300px;
+    min-width: 350px;
     text-align: center;
     font-size: 1.8rem;
     padding: 1rem 0;
@@ -234,6 +238,10 @@ const Timeline = styled.div`
     height: 100%;
     background: #aaa;
     transform: translateX(-50%);
+  }
+
+  @media screen and (max-width: 740px) {
+    min-width: 0px;
   }
 `;
 
