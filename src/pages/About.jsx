@@ -197,7 +197,7 @@ const Journey = styled.div`
   padding: 3rem 6rem;
 
   @media screen and (max-width: 680px) {
-    padding: 3rem 3rem;  // <-- Reduz o padding para telas menores
+    padding: 3rem 3rem; // <-- Reduz o padding para telas menores
   }
 
   ul {
@@ -221,6 +221,16 @@ const Journey = styled.div`
       min-width: 200px;
     }
   }
+  @media screen and (max-width: 768px) {
+    ul {
+      display: block;
+    }
+
+    li {
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+  }
 `;
 
 const Timeline = styled.div`
@@ -228,7 +238,7 @@ const Timeline = styled.div`
   padding: 2rem 0;
   width: 100%;
   max-width: 800px;
-  margin: 6rem auto;
+  margin: 3rem auto;
 
   &::before {
     content: "";
@@ -241,12 +251,15 @@ const Timeline = styled.div`
   }
 
   @media screen and (max-width: 740px) {
-    min-width: 0px;
+    &::before {
+      display: none; /* Esconde a linha central em telas pequenas */
+    }
   }
 `;
 
 const TimelineItem = styled.div`
   position: relative;
+  cursor: pointer;
   width: 60%;
   padding: 1rem 2rem;
   box-sizing: border-box;
@@ -275,11 +288,21 @@ const TimelineItem = styled.div`
   &:nth-child(even)::before {
     left: -10px;
   }
+
+  @media screen and (max-width: 740px) {
+    width: 100%;
+    left: 0 !important;
+    text-align: start;
+
+    &::before {
+      display: none; /* Remove os pontos de marcação nas telas pequenas */
+    }
+  }
 `;
 
 const TimelineContent = styled.div`
   background: var(--secondary-background);
-  padding: 1rem;
+  padding: 2rem 2rem;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   text-align: start;
 
@@ -291,8 +314,12 @@ const TimelineContent = styled.div`
 
   p {
     color: #aaaaaa;
-    line-height: 1.5rem;
-    margin-bottom: 1.3rem;
+    line-height: 1.3rem;
+    margin-bottom: 1.1rem;
+  }
+
+  @media (max-width: 540px) {
+    padding: 1rem;
   }
 `;
 

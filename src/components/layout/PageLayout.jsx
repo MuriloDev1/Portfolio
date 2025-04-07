@@ -21,7 +21,7 @@ const HeroContent = styled.section`
   justify-content: center;
   align-items: center;
   background-color: var(--primary-background);
-  height: 70dvh;
+  height: 60dvh;
 
   h2 {
     font-size: 3rem;
