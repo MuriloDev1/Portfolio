@@ -208,7 +208,7 @@ const Journey = styled.div`
 
   li {
     cursor: pointer;
-    width: 20%;
+    width: 40%;
     min-width: 350px;
     text-align: center;
     font-size: 1.8rem;
@@ -217,9 +217,6 @@ const Journey = styled.div`
     background-color: var(--secondary-background);
     list-style: none;
 
-    @media screen and (max-width: 740px) {
-      min-width: 200px;
-    }
   }
   @media screen and (max-width: 768px) {
     ul {
@@ -227,6 +224,7 @@ const Journey = styled.div`
     }
 
     li {
+      min-width: 0;
       width: 100%;
       margin: 1.5rem 0;
     }
