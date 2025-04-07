@@ -2,7 +2,13 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Content, Greeting, Title, Subtitle, Description } from "../layout/PageTitle";
+import {
+  Content,
+  Greeting,
+  Title,
+  Subtitle,
+  Description,
+} from "../layout/PageTitle";
 
 const Hero = () => {
   useEffect(() => {
@@ -18,17 +24,12 @@ const Hero = () => {
       <Content data-aos="fade-up" data-aos-delay="500">
         <Greeting>Olá! meu nome é</Greeting>
         <Title>Murilo Antunes.</Title>
-        <Subtitle>
-          Construindo experiências digitais.
-        </Subtitle>
+        <Subtitle>Construindo experiências digitais.</Subtitle>
         <Description>
           Desenvolvedor Full Stack apaixonado por tecnologia e inovação. Estou
           focado em aprender e me desenvolver cada vez mais.
         </Description>
-        <Button
-          href="/Murilo_Antunes_CV.pdf"
-          download="Murilo_Antunes_CV"
-        >
+        <Button href="/Murilo_Antunes_CV.pdf" download="Murilo_Antunes_CV">
           Download CV <i className="fa-solid fa-download"></i>
         </Button>
       </Content>
@@ -43,8 +44,11 @@ const Hero = () => {
         >
           <i className="fa-brands fa-linkedin"></i>
         </SocialLink>
-        <SocialLink href="https://wa.me/5515988235261" target="_blank">
-          <i className="fa-brands fa-whatsapp"></i>
+        <SocialLink
+          href="mailto:muriloantunesdasilva264@gmail.com"
+          target="_blank"
+        >
+          <i className="fa-brands fa-google"></i>
         </SocialLink>
       </SocialsContainer>
     </HeroContainer>

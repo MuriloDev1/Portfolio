@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     --header: #06132f;
     --primary-background: #06132f;
     --secondary-background:rgb(16, 27, 49);
-    --font-family: 'Montserrat', sans-serif;
+    --font-family: 'Lora', sans-serif;
   }
   
  * {

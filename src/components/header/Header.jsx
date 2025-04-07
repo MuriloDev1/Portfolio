@@ -2,12 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../../assets/Logo.png";
 import { Link } from "react-router-dom";
+import { slide as Menu } from "react-burger-menu";
 
 const Header = () => {
   return (
     <HeaderWrapper>
       <Logo src={logo} alt="Logo do Portfólio" />
-      <Nav>
+
+      {/* Menu Desktop */}
+      <Nav className="desktop-menu">
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -25,6 +28,24 @@ const Header = () => {
           </li>
         </ul>
       </Nav>
+
+      {/* Menu Mobile (Hambúrguer) */}
+      <MobileMenu className="mobile-menu">
+        <Menu right>
+          <Link className="menu-item" to="/">
+            Home
+          </Link>
+          <Link className="menu-item" to="/about">
+            Sobre
+          </Link>
+          <Link className="menu-item" to="/projects">
+            Projetos
+          </Link>
+          <Link className="menu-item" to="#Contact">
+            Contato
+          </Link>
+        </Menu>
+      </MobileMenu>
     </HeaderWrapper>
   );
 };
@@ -38,7 +59,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 8px;
 `;
 
 const Logo = styled.img`
@@ -75,11 +96,7 @@ const Nav = styled.nav`
   }
 
   @media screen and (max-width: 900px) {
-    ul {
-      display: block;
-      justify-content: center;
-      align-items: center;
-    }
+    display: none;
   }
 `;
 
@@ -95,6 +112,44 @@ const ContactButton = styled.a`
   &:hover {
     background-color: var(--highlight-color);
     color: white;
+  }
+`;
+
+const MobileMenu = styled.div`
+  display: none;
+
+  @media screen and (max-width: 900px) {
+    display: block;
+
+    .bm-burger-button {
+      position: fixed;
+      width: 25px;
+      height: 20px;
+      top: 35px;
+    }
+
+    .bm-burger-bars {
+      background: var(--highlight-color);
+    }
+
+    .bm-menu {
+      background: var(--header);
+      padding: 4rem;
+      font-size: 1.15em;
+      text-align: center;
+    }
+
+    .bm-item {
+      display: inline-block;
+      color: white;
+      padding: 0.6rem 0;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .bm-item:hover {
+      color: var(--highlight-color);
+    }
   }
 `;
 
