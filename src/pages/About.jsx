@@ -209,7 +209,7 @@ const Journey = styled.div`
   li {
     cursor: pointer;
     width: 40%;
-    min-width: 350px;
+    max-width: 400px;
     text-align: center;
     font-size: 1.8rem;
     padding: 1rem 0;
@@ -224,7 +224,7 @@ const Journey = styled.div`
     }
 
     li {
-      min-width: 0;
+      max-width: 100%;
       width: 100%;
       margin: 1.5rem 0;
     }
