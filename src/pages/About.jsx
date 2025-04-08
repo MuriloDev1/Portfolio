@@ -193,11 +193,10 @@ const ContentAbout = styled.div`
 // Minha Jornada
 const Journey = styled.div`
   background-color: var(--primary-background);
-  min-height: 100dvh;
   padding: 3rem 6rem;
 
   @media screen and (max-width: 680px) {
-    padding: 3rem 3rem; // <-- Reduz o padding para telas menores
+    padding: 3rem 3rem;
   }
 
   ul {
@@ -216,8 +215,18 @@ const Journey = styled.div`
     border: 1px solid #aaaaaa27;
     background-color: var(--secondary-background);
     list-style: none;
-
+    transition: all 0.3s ease;
   }
+
+  li.active {
+    background-color: var(
+      --highlight-color
+    );
+    color: #fff; 
+    font-weight: bold; 
+    border: 1px solid var(--highlight-color);
+  }
+
   @media screen and (max-width: 768px) {
     ul {
       display: block;

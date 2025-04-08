@@ -6,7 +6,7 @@ import { Subtitle, Title, Wrapper } from "../sections/SectionTitle";
 
 const servicesData = [
   {
-    imgSrc: "./src/assets/service-icon-1.webp",
+    imgSrc: "../src/assets/service-icon-1.webp",
     title: "UI/UX Design",
     items: [
       "Prototipação e Wireframing",
@@ -16,12 +16,12 @@ const servicesData = [
     ],
   },
   {
-    imgSrc: "./src/assets/service-icon-2.webp",
+    imgSrc: "../src/assets/service-icon-2.webp",
     title: "FrontEnd",
     items: ["HTML/CSS", "JavaScript", "Animações Web", "React"],
   },
   {
-    imgSrc: "./src/assets/service-icon-3.webp",
+    imgSrc: "../src/assets/service-icon-3.webp",
     title: "BackEnd",
     items: ["Java/SpringBoot", "APIs RESTful", "SQL/NoSQL", "Scrum"],
   },
@@ -55,7 +55,7 @@ const Services = () => {
 const ContainerItems = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: right;
   align-items: start;
   gap: 2.5rem;
 `;
