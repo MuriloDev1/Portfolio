@@ -3,9 +3,11 @@ import styled from "styled-components";
 import Layout from "../components/layout/PageLayout";
 import { Link } from "react-router-dom";
 // Imagem Projetos
-import CadastroImg from "../assets/Projeto-Cadastro.png";
-import TechmobImg from "../assets/Techmob.png";
-import SpotifyImg from "../assets/Spotify.webp";
+import CadastroImg from "../assets/projeto-cadastro.png";
+import TechmobImg from "../assets/techmob.png";
+import SpotifyImg from "../assets/spotify.webp";
+import ProjetoFinancas from "../assets/projeto-gestao-financas.jpg";
+import ProjetoTerapia from "../assets/projeto-terapia.png";
 
 const Projects = () => {
   return (
@@ -28,7 +30,7 @@ const Projects = () => {
             <Items key={index}>
               <img src={project.img} alt={project.title} />
               <h2>{project.title}</h2>
-              <p>{project.tools}</p>
+              <p>{project.description}</p>
             </Items>
           ))}
         </ContainerItems>
@@ -40,17 +42,27 @@ const Projects = () => {
 const projectsData = [
   {
     title: "Cadastro de Usuários",
-    tools: "Node.js / Express / React",
+    description: "Node.js / Express / React",
     img: CadastroImg,
   },
   {
     title: "Projeto - Spotify",
-    tools: "Node.js / Express / React ",
+    description: "Node.js / Express / React ",
     img: SpotifyImg,
   },
   {
+    title: "Projeto - Gestão de Finanças",
+    description: "Gerenciador de finanças",
+    img: ProjetoFinancas,
+  },
+  {
+    title: "Landing Page - Terapia",
+    description: "Página de terapia com React",
+    img: ProjetoTerapia,
+  },
+  {
     title: "Projeto - Toyota ",
-    tools: "Projeto em produção para a toyota em parceria com Senai",
+    description: "Projeto em produção para a toyota em parceria com Senai",
     img: TechmobImg,
   },
 ];
@@ -80,7 +92,7 @@ const Items = styled.section`
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
   }
 
   img {
