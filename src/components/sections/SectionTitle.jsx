@@ -32,14 +32,15 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
+  text-align: right;
 
   @media (max-width: 1024px) {
     margin: 2rem 0;
   }
 
   @media (max-width: 600px) {
-    align-items: center;
-    text-align: center;
+    align-items: end;
+    text-align: end;
   }
 `;
 

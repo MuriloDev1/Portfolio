@@ -9,8 +9,8 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: ${({ secondary }) =>
-    secondary ? "var(--secondary-background)" : "var(--primary-background)"};
+   background-color: ${({ $secondary }) =>
+    $secondary ? "var(--secondary-background)" : "var(--primary-background)"};
 `;
 
 export default Container;

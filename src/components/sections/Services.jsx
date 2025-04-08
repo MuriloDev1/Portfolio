@@ -29,7 +29,7 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <Container secondary>
+    <Container $secondary={true}>
       <Wrapper>
         <Subtitle>|| Services</Subtitle>
         <Title>Serviços e Conhecimentos</Title>
