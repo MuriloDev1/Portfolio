@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Layout from "../components/layout/PageLayout";
 import { Link } from "react-router-dom";
 // Imagem Projetos
-import CadastroImg from "../assets/projeto-cadastro.png";
+import CadastroImg from "../assets/cadastro-usuarios.png";
 import TechmobImg from "../assets/techmob.png";
 import SpotifyImg from "../assets/spotify.webp";
 import ProjetoFinancas from "../assets/projeto-gestao-financas.jpg";

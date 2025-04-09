@@ -16,12 +16,12 @@ const servicesData = [
     ],
   },
   {
-    imgSrc: "../src/assets/service-icon-2.webp",
+    imgSrc: "../../src/assets/service-icon-2.webp",  
     title: "FrontEnd",
     items: ["HTML/CSS", "JavaScript", "Animações Web", "React"],
   },
   {
-    imgSrc: "../src/assets/service-icon-3.webp",
+    imgSrc: "../../src/assets/service-icon-3.webp",
     title: "BackEnd",
     items: ["Java/SpringBoot", "APIs RESTful", "SQL/NoSQL", "Scrum"],
   },
