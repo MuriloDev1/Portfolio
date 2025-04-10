@@ -22,7 +22,7 @@ const Header = () => {
             <Link to="/projects">Projetos</Link>
           </li>
           <li>
-            <ContactButton as={Link} to="#Contact">
+            <ContactButton as={Link} to="/contact">
               Contato
             </ContactButton>
           </li>

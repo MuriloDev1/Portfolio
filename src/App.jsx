@@ -9,6 +9,7 @@ import "aos/dist/aos.css";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import Contact from "./pages/Contact";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -47,6 +48,7 @@ function App() {
         />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );

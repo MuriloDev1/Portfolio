@@ -65,7 +65,7 @@ const HeroContainer = styled.section`
   justify-content: center;
 
   @media (max-width: 768px) {
-    padding: 6rem 6rem;
+    padding: 6rem 3rem;
     text-align: start;
   }
 `;
