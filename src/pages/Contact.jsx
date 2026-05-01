@@ -1,6 +1,6 @@
-import React from 'react'
-
+import React, { useState } from 'react'
 import styled from "styled-components";
+import emailjs from '@emailjs/browser';
 
 const Container = styled.div`
   background-color: #06132f;
@@ -75,6 +75,13 @@ const TextArea = styled.textarea`
   }
 `;
 
+const Legend = styled.p`
+  font-size: 0.75rem;
+  color: #a0aec0;
+  margin-bottom: 1.5rem;
+  margin-top: -1rem;
+`;
+
 const Button = styled.button`
   margin-top: 1rem;
   padding: 0.9rem 2rem;
@@ -90,28 +97,69 @@ const Button = styled.button`
   }
 `;
 
+const StatusMsg = styled.p`
+  color: ${({ $error }) => ($error ? '#fc8181' : '#68d391')};
+`;
+
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '', email: '', phone: '', subject: '', message: ''
+  });
+  const [status, setStatus] = useState({ sending: false, msg: '', error: false });
+
+  const handleChange = (e) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ sending: true, msg: '', error: false });
+
+    try {
+      await emailjs.send(
+        'service_erazqdx',    // EmailJS
+        'template_h52ysd9',   // EmailJS
+        {
+          from_name:  formData.name,
+          from_email: formData.email,
+          phone:      formData.phone,
+          subject:    formData.subject,
+          message:    formData.message,
+        },
+        '1XmQFSioPdgaQMcWj'     // EmailJS
+      );
+
+      setStatus({ sending: false, msg: 'Mensagem enviada com sucesso!', error: false });
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+
+    } catch (err) {
+      setStatus({ sending: false, msg: 'Erro ao enviar. Tente novamente.', error: true });
+    }
+  };
+
   return (
     <Container>
       <Title>
         <span>|| Get In Touch</span>
-        If you have any project or need help. Contact me
+        Se você tem um projeto em mente ou precisa de ajuda, fale comigo.
       </Title>
-      <Description>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-      </Description>
-      <Form>
-        <Input type="text" placeholder="Name" />
-        <Input type="email" placeholder="Email" />
-        <Input type="text" placeholder="Phone" />
-        <Input type="text" placeholder="Subject" />
-        <TextArea placeholder="Comment" />
-        <Button type="submit">Submit Message</Button>
+      <Description> Estou sempre aberto a novas oportunidades, colaborações e desafios. Seja para discutir uma ideia inovadora, criar uma solução sob medida para o seu negócio ou simplesmente trocar experiências, ficarei feliz em ouvir você. Sinta-se à vontade para me mandar uma mensagem com os detalhes do que precisa. Retornarei o mais breve possível!</Description>
+
+      <Form onSubmit={handleSubmit}>
+      <Input name="name"    value={formData.name}    onChange={handleChange} placeholder="Nome *"            required />
+      <Input name="email"   value={formData.email}   onChange={handleChange} placeholder="Email *"           type="email" required />
+      <Input name="phone"   value={formData.phone}   onChange={handleChange} placeholder="Telefone (opcional)" />
+      <Input name="subject" value={formData.subject} onChange={handleChange} placeholder="Assunto (opcional)" />
+      <TextArea name="message" value={formData.message} onChange={handleChange} placeholder="Mensagem *"     required />
+      
+        <Button type="submit" disabled={status.sending}>
+          {status.sending ? 'Enviando...' : 'Envie sua mensagem'}
+        </Button>
+
+        {status.msg && <StatusMsg error={status.error}>{status.msg}</StatusMsg>}
       </Form>
     </Container>
   );
 };
 
-export default Contact
+export default Contact;

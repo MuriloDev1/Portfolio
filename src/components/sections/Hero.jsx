@@ -29,7 +29,7 @@ const Hero = () => {
           Desenvolvedor Full Stack apaixonado por tecnologia e inovação. Estou
           focado em aprender e me desenvolver cada vez mais.
         </Description>
-        <Button href="/Murilo_Antunes_CV.pdf" download="Murilo_Antunes_CV">
+        <Button href="/CV_MURILO_GALHARDO.pdf" download="CV_MURILO_GALHARDO">
           Download CV <i className="fa-solid fa-download"></i>
         </Button>
       </Content>

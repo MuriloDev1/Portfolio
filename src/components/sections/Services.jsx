@@ -3,10 +3,15 @@ import styled from "styled-components";
 // Imports Components
 import { Container } from "../layout/Container";
 import { Subtitle, Title, Wrapper } from "../sections/SectionTitle";
+// Import Images 
+import serviceIcon1 from "../../assets/service-icon-1.webp";
+import serviceIcon2 from "../../assets/service-icon-2.webp";
+import serviceIcon3 from "../../assets/service-icon-3.webp";
+
 
 const servicesData = [
   {
-    imgSrc: "../src/assets/service-icon-1.webp",
+    imgSrc: serviceIcon1,
     title: "UI/UX Design",
     items: [
       "Prototipação e Wireframing",
@@ -16,12 +21,12 @@ const servicesData = [
     ],
   },
   {
-    imgSrc: "../../src/assets/service-icon-2.webp",  
+    imgSrc: serviceIcon2,  
     title: "FrontEnd",
     items: ["HTML/CSS", "JavaScript", "Animações Web", "React"],
   },
   {
-    imgSrc: "../../src/assets/service-icon-3.webp",
+    imgSrc: serviceIcon3,
     title: "BackEnd",
     items: ["Java/SpringBoot", "APIs RESTful", "SQL/NoSQL", "Scrum"],
   },
