@@ -4,7 +4,7 @@ import Layout from "../components/layout/PageLayout";
 import { Link } from "react-router-dom";
 // Imagem Projetos
 import CadastroImg from "../assets/cadastro-usuarios.png";
-import TechmobImg from "../assets/techmob.png";
+import TechMobImg from "../assets/techmob.png";
 import SpotifyImg from "../assets/spotify.webp";
 import ProjetoFinancas from "../assets/projeto-gestao-financas.jpg";
 import ProjetoTerapia from "../assets/projeto-terapia.png";
@@ -63,7 +63,7 @@ const projectsData = [
   {
     title: "Projeto - Toyota ",
     description: "Projeto em produção para a toyota em parceria com Senai",
-    img: TechmobImg,
+    img: TechMobImg,
   },
 ];
 
