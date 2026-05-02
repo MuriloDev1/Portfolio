@@ -3,11 +3,10 @@ import styled from "styled-components";
 // Imports Components
 import { Container } from "../layout/Container";
 import { Subtitle, Title, Wrapper } from "../sections/SectionTitle";
-// Import Images 
+// Import Images
 import serviceIcon1 from "../../assets/service-icon-1.webp";
 import serviceIcon2 from "../../assets/service-icon-2.webp";
 import serviceIcon3 from "../../assets/service-icon-3.webp";
-
 
 const servicesData = [
   {
@@ -21,7 +20,7 @@ const servicesData = [
     ],
   },
   {
-    imgSrc: serviceIcon2,  
+    imgSrc: serviceIcon2,
     title: "FrontEnd",
     items: ["HTML/CSS", "JavaScript", "Animações Web", "React"],
   },
@@ -53,51 +52,59 @@ const Services = () => {
           </SingleItem>
         ))}
       </ContainerItems>
-    </Container >
+    </Container>
   );
 };
 
 const ContainerItems = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: right;
-  align-items: start;
-  gap: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const SingleItem = styled.div`
   cursor: pointer;
   background-color: var(--primary-background);
-  width: 300px;
-  min-height: 450px;
-  padding: 3rem;
+  width: 100%;
+  min-height: 400px;
+  padding: 2.5rem 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
   transition: transform 0.3s ease;
+  box-sizing: border-box;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   }
 
+  img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+
   h2 {
-    margin: 2rem 0;
-    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.4rem;
   }
 
   li {
     color: #aaaaaa;
     list-style: none;
-    margin-bottom: 1.5rem;
-  }
-
-  @media (max-width: 1024px) {
-    width: 400px;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
+    margin-bottom: 1rem;
+    line-height: 1.4;
   }
 `;
 

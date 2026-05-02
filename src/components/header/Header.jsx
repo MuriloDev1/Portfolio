@@ -55,18 +55,30 @@ const HeaderWrapper = styled.header`
   top: 0;
   z-index: 99999;
   background-color: var(--header);
-  padding: 0rem 4rem;
+  padding: 0 4rem;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 8px;
+
+  @media (max-width: 900px) {
+    padding: 0 1.5rem;
+    height: 70px;
+  }
 `;
 
 const Logo = styled.img`
-  padding: 0 1.5rem;
   height: 90px;
   width: auto;
+
+  @media (max-width: 900px) {
+    height: 52px;
+    padding: 0;
+  }
 `;
+
+("");
 
 const Nav = styled.nav`
   ul {
@@ -121,11 +133,23 @@ const MobileMenu = styled.div`
   @media screen and (max-width: 900px) {
     display: block;
 
+    .bm-overlay {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+    }
+
+    .bm-menu-wrap {
+      position: fixed !important;
+      top: 0 !important;
+    }
+
     .bm-burger-button {
       position: fixed;
-      width: 25px;
-      height: 20px;
-      top: 35px;
+      width: 24px; 
+      height: 18px;
+      top: 26px;
+      right: 1.5rem;
     }
 
     .bm-burger-bars {

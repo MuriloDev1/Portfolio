@@ -6,24 +6,13 @@ export const Title = styled.h1`
   display: inline;
 
   @media (max-width: 1024px) {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   @media (max-width: 600px) {
-    font-size: 2.5rem;
-  }
-`;
-
-export const Subtitle = styled.h2`
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: normal;
-  color: #aaaaaa;
-  display: inline;
-  margin-right: 0.5rem;
-
-  @media (max-width: 600px) {
-    font-size: 1.1rem;
+    font-size: 2rem;
+    display: block;
+    word-break: break-word;
   }
 `;
 
@@ -39,8 +28,21 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 600px) {
-    align-items: end;
-    text-align: end;
+    align-items: flex-start;
+    text-align: left;
+  }
+`;
+
+export const Subtitle = styled.h2`
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #aaaaaa;
+  display: inline;
+  margin-right: 0.5rem;
+
+  @media (max-width: 600px) {
+    font-size: 1.1rem;
   }
 `;
 

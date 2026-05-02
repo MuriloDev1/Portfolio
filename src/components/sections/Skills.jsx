@@ -62,49 +62,53 @@ const SkillsContent = styled.div`
   }
 `;
 
-const SkillBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 1.5rem;
-  flex: 1;
-  margin-left: 3rem;
-
-  @media (max-width: 768px) {
-    margin-left: 0;
-    width: 100%;
-    align-items: center;
-  }
-`;
 
 const SingleSkillItem = styled.div`
   width: 100%;
-  max-width: 500px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: var(--secondary-background);
-  padding: 2rem;
-  gap: 1rem;
+  padding: 1.5rem 2rem;
+  gap: 0.8rem;
+  box-sizing: border-box;
 `;
 
 const SkillHeader = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 1rem;
 `;
 
 const Tag = styled.div`
   font-size: 1rem;
   font-weight: normal;
   color: #aaaaaa;
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
 `;
 
 const SkillPercentage = styled.div`
   font-size: 1rem;
   font-weight: normal;
   color: #aaaaaa;
+  flex-shrink: 0;
+`;
+
+const SkillBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  margin-left: 3rem;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    width: 100%;
+  }
 `;
 
 const ProgressBar = styled.div`
