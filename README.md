@@ -1,12 +1,26 @@
-# Portfolio
-🚀 Meu Portfólio em React
+# MuriloDev — Portfólio
 
-Este é o meu portfólio desenvolvido em React.js, onde apresento meus projetos, habilidades e experiências. O objetivo é praticar React enquanto construo um site profissional e interativo.
+Portfólio pessoal desenvolvido em React, com foco em design limpo, navegação fluida e responsividade em todos os dispositivos.
 
-📌 Tecnologias utilizadas:
+🔗 **Acesse:** [murilodev.vercel.app](https://murilodev.vercel.app)
 
-React.js ⚛️
-JavaScript (ES6+)
-CSS/Styled-Components
-React Router (para navegação)
-Vercel/Netlify (para deploy)
+---
+
+## Tecnologias
+
+- **React.js** — interface baseada em componentes
+- **JavaScript ES6+** — sintaxe e recursos modernos
+- **Styled Components** — estilização com CSS-in-JS
+- **React Router DOM** — navegação client-side
+- **EmailJS** — formulário de contato sem backend
+- **AOS** — animações ativadas pelo scroll
+- **Vercel** — CI/CD e hospedagem
+
+## Como rodar localmente
+
+```bash
+git clone https://github.com/MuriloDev1/Portfolio.git
+cd Portfolio
+npm install
+npm run dev
+```
