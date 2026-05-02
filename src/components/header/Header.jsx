@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClose = () => setIsOpen(false);
+
   return (
     <HeaderWrapper>
       <Logo src={logo} alt="Logo do Portfólio" />
@@ -29,19 +33,23 @@ const Header = () => {
         </ul>
       </Nav>
 
-      {/* Menu Mobile (Hambúrguer) */}
+      {/* Menu Mobile */}
       <MobileMenu className="mobile-menu">
-        <Menu right>
-          <Link className="menu-item" to="/">
+        <Menu
+          right
+          isOpen={isOpen}
+          onStateChange={({ isOpen }) => setIsOpen(isOpen)}
+        >
+          <Link className="menu-item" to="/" onClick={handleClose}>
             Home
           </Link>
-          <Link className="menu-item" to="/about">
+          <Link className="menu-item" to="/about" onClick={handleClose}>
             Sobre
           </Link>
-          <Link className="menu-item" to="/projects">
+          <Link className="menu-item" to="/projects" onClick={handleClose}>
             Projetos
           </Link>
-          <Link className="menu-item" to="#Contact">
+          <Link className="menu-item" to="/contact" onClick={handleClose}>
             Contato
           </Link>
         </Menu>
@@ -146,7 +154,7 @@ const MobileMenu = styled.div`
 
     .bm-burger-button {
       position: fixed;
-      width: 24px; 
+      width: 24px;
       height: 18px;
       top: 26px;
       right: 1.5rem;
@@ -173,6 +181,17 @@ const MobileMenu = styled.div`
 
     .bm-item:hover {
       color: var(--highlight-color);
+    }
+
+    .bm-cross-button {
+      height: 24px;
+      width: 24px;
+      top: 20px !important;
+      right: 20px !important;
+    }
+
+    .bm-cross {
+      background: var(--highlight-color);
     }
   }
 `;
